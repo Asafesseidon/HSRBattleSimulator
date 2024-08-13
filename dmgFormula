@@ -1,0 +1,86 @@
+
+General DMG Formula{
+
+    Damage= Base DMG × CRIT × DMG% Multiplier × DEF Multiplier × RES Multiplier × DMG Taken Multiplier × Toughness Multiplier
+
+}
+
+Break DMG Formula{
+
+    Damage= Base DMG x (1 + Break Effect) x DEF Multiplier(target) x RES Multiplier(target) x Vulnerability Multiplier x Broken Multiplier(target)
+
+}
+
+Super Break DMG Formula{
+
+    Damage= Level Multiplier x (Toughness Reduction/10) x (1 + Break Effect) x  (1 + Super Break DMG Increase) x DEF Multiplier(target) x RES Multiplier(target) x Vulnerability Multiplier(target)
+}
+
+
+See the sections below for the breakdown of each individual part of the formula.
+
+Base Damage{
+
+    Base DMG={
+        (Skill MV + Extra MV) × ATK + Extra DMG if, attack scales with ATK
+        (Skill MV + Extra MV) × DEF + Extra DMG if, attack scales with DEF
+        (Skill MV + Extra MV) × Max HP + Extra DMG if, attack scales with Max HP
+
+    } 
+
+    
+}
+
+
+Critical Hits {
+
+    CRIT={
+        1 + CRITDamage  if, CRIT otherwise AverageCrit= 1 + clamp{0%, CRITRate, 100%} × CRITDamage
+        1
+    }
+}
+   
+​
+
+​
+
+
+DMG% Bonuses{
+
+    DMG% Multiplier= 1 + Elemental DMG% + All Type DMG% + DoT DMG%
+    For all relevant DMG%'s
+}
+
+
+
+Enemy Defense{
+
+    DEF Multiplier= Level Character +20/(Level Enemy +20)+(Level Character +20)
+
+}
+
+
+
+​
+ 
+Enemy Resistance{
+
+    RES Multiplier= 100% − (RES% − RES PEN%)
+}
+
+
+
+
+Damage Taken Multiplier{
+
+    DMG Taken Multiplier= 1 + Elemental DMG Taken% + All Type DMG Taken%
+
+}
+
+
+
+Toughness Multiplier={
+    0.9 if, Enemy has Toughness
+    1.0 if, Enemy Toughness has been broken
+}
+​

@@ -8,19 +8,64 @@ body{
   background-color: rgb(19, 0, 44);
   color: #ffffff;
 }
+
+
 #content{
 
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  flex-wrap: wrap;  
 
   width: max-content;
   height: max-content;
+  align-content: space-around;
+}
+
+.turnOrderBoxes{
+
+  position: static;
+  width: 22vh;
+  height:10vh;
+  padding:1vh;
+  margin: 0.5vh;
+
+  background-color: var(--primary-transparent-color);
+  border-radius: 10%;
+
+}
+#column{
+
+  position: static;
+  height: 100%max-content;
+  justify-content: space-around;
+}
+
+.span{
+  height: 40vh;
+}
+
+#enemyBox{
+  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  height: min-content;
 }
 
 .enemy{
 
   margin: 5vh;
+}
+
+#allyParty{
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 1vh;
+
+  height: min-content;
 }
 
 .ultimate{
@@ -35,8 +80,15 @@ body{
 }
 .allyCharacter img {
 
-  width: 16vh;
+  width: 32vh;
   height: 16vh;
+}
+
+#basicBattleControls{
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 #skill{
 

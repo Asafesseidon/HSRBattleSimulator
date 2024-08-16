@@ -7,75 +7,100 @@
   <link rel="stylesheet" href="./battle.css">
   <script src="./battle.js"></script>
 
-  <title>Document</title>
+  <title>HSR Battle Simulator</title>
 </head>
 <body>
   
-  <div id="turnOrder">
-
-    <div>
-      1
-    </div>
-  </div>
   <div id="content">
 
+    <div id="turnOrder">
 
-    <div class="enemy" id="enemy1">
-      Enemy 1
-      <div class="enemyToughnessBar" id="enemyToughnessBar1">Toughness</div>
-      <div class="enemyHpBar" id="enemyHpBar1">HP</div>
-    </div>
+    <div class="turnOrderBoxes" id="turnOrderBox1">1</div>
 
-    <div class="enemy" id="enemy2">
-      Enemy 2
-      <div class="enemyToughnessBar" id="enemyToughnessBar2">Toughness</div>
-      <div class="enemyHpBar" id="enemyHpBar2">HP</div>
-    </div>
+    <div class="turnOrderBoxes" id="turnOrderBox2">2</div>
 
-    <div class="enemy" id="enemy3">
-      Enemy 3
-      <div class="enemyToughnessBar" id="enemyToughnessBar3">Toughness</div>
-      <div class="enemyHpBar" id="enemyHpBar3">HP</div>
-    </div>
+    <div class="turnOrderBoxes" id="turnOrderBox3">3</div>
 
-    <div class="enemy" id="enemy4">
-      Enemy 4
-      <div class="enemyToughnessBar" id="enemyToughnessBar4">Toughness</div>
-      <div class="enemyHpBar" id="enemyHpBar4">HP</div>
+    <div class="turnOrderBoxes" id="turnOrderBox4">4</div>
+
+    <div class="turnOrderBoxes" id="turnOrderBox5">5</div>
+
+    <div class="turnOrderBoxes" id="turnOrderBox6">6</div>
+
+    <div class="turnOrderBoxes" id="turnOrderBox7">7</div>
+
     </div>
 
-    <div class="enemy" id="enemy5">
-      Enemy 5
-      <div class="enemyToughnessBar" id="enemyToughnessBar5">Toughness</div>
-      <div class="enemyHpBar" id="enemyHpBar5">HP</div>
-    </div>
-  
-    <div class="allyCharacter" id="ally1">
-      <div class="ultimate" id="ultAlly1">Ult</div>
-      <img src="./Assets/Character_Huohuo_Portrait.webp" alt="">
-      <div class="allyHpBar" id="hpAlly1">HP</div>
-      
+  <div id="column">
+
+       <div id="enemyBox">
+      <div class="enemy" id="enemy1">
+          Enemy 1
+          <div class="enemyToughnessBar" id="enemyToughnessBar1">Toughness</div>
+          <div class="enemyHpBar" id="enemyHpBar1">HP</div>
+        </div>
+
+        <div class="enemy" id="enemy2">
+          Enemy 2
+          <div class="enemyToughnessBar" id="enemyToughnessBar2">Toughness</div>
+          <div class="enemyHpBar" id="enemyHpBar2">HP</div>
+        </div>
+
+        <div class="enemy" id="enemy3">
+          Enemy 3
+          <div class="enemyToughnessBar" id="enemyToughnessBar3">Toughness</div>
+          <div class="enemyHpBar" id="enemyHpBar3">HP</div>
+        </div>
+
+        <div class="enemy" id="enemy4">
+          Enemy 4
+          <div class="enemyToughnessBar" id="enemyToughnessBar4">Toughness</div>
+          <div class="enemyHpBar" id="enemyHpBar4">HP</div>
+        </div>
+
+        <div class="enemy" id="enemy5">
+          Enemy 5
+          <div class="enemyToughnessBar" id="enemyToughnessBar5">Toughness</div>
+          <div class="enemyHpBar" id="enemyHpBar5">HP</div>
+        </div>
+      </div>
+
+    <div class="span">
+
     </div>
 
-    <div class="allyCharacter" id="ally2">
-      <div class="ultimate" id="ultAlly2">Ult</div>
-      <img src="./Assets/Character_Ruan_Mei_Portrait.webp" alt="">
-      <div class="allyHpBar" id="hpAlly2">HP</div>
-      
-    </div>
+    <div id="allyParty">
 
-    <div class="allyCharacter" id="ally3">
-      <div class="ultimate" id="ultAlly3">Ult</div>
-      <img src="./Assets/Character_Kafka_Portrait.webp" alt="">
-      <div class="allyHpBar" id="hpAlly3">HP</div>
-    </div>
+      <div class="allyCharacter" id="ally1">
+            <div class="ultimate" id="ultAlly1">Ult</div>
+            <img src="./Assets/Character_Huohuo_Portrait.webp" alt="">
+            <div class="allyHpBar" id="hpAlly1">HP</div>
+            
+          </div>
 
-    <div class="allyCharacter" id="ally4">
-      <div class="ultimate" id="ultAlly4">Ult</div>
-      <img src="./Assets/Character_Black_Swan_Portrait.webp" alt="">
-      <div class="allyHpBar" id="hpAlly4">HP</div>
-      
-    </div>
+          <div class="allyCharacter" id="ally2">
+            <div class="ultimate" id="ultAlly2">Ult</div>
+            <img src="./Assets/Character_Ruan_Mei_Portrait.webp" alt="">
+            <div class="allyHpBar" id="hpAlly2">HP</div>
+            
+          </div>
+
+          <div class="allyCharacter" id="ally3">
+            <div class="ultimate" id="ultAlly3">Ult</div>
+            <img src="./Assets/Character_Kafka_Portrait.webp" alt="">
+            <div class="allyHpBar" id="hpAlly3">HP</div>
+          </div>
+
+          <div class="allyCharacter" id="ally4">
+            <div class="ultimate" id="ultAlly4">Ult</div>
+            <img src="./Assets/Character_Black_Swan_Portrait.webp" alt="">
+            <div class="allyHpBar" id="hpAlly4">HP</div>
+            
+          </div>
+
+      </div>
+
+  </div>
 
     <div id="basicBattleControls">
       <div id="skill" onclick="basicControls('skill')">Skill</div>
@@ -83,7 +108,7 @@
       <br>
       <div id="sP">SP
 
-        1 2 3 4 5
+        12345
       </div>
     </div>
     

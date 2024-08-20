@@ -1,15 +1,17 @@
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
-function basicControls(value){
+function basicControls(value, characterId){
 
     var characterId = document.getElementById("currentCharacter");
 
     if (value == 'skill'){
-        
+
+        Skill(characterId);
     }
 
     else if (value == 'basicAttack'){
 
+        BasicAttack(characterId);
     }
 }
 
@@ -156,4 +158,80 @@ function SuperBreakDMG(LevelMultiplier, toughnessReduction, breakEffect, superBr
     var superBreakDamage = part1 * part2 * part3;
 
     return superBreakDamage;
+}
+
+function turnOrder(actionGauge, CurrentAV){
+
+    var turnOrderValue = 10000;
+
+    if (actionGauge == 0 || CurrentAV == 0){
+
+        var currentCharacterTurn = 'now';
+    }
+
+}
+
+function AdvanceForwardActionDelay(actionGauge, advanceForwardPercent, advanceForwardPercent, actionDelayPercent){
+    
+    actionGauge = actionGauge - (advanceForwardPercent - actionDelayPercent) * 10000;
+    
+    return actionGauge;
+}
+
+function ToughnessBreakDelay(actionGauge){
+
+    actionGauge = actionGauge - ( 0 - 25%actionGauge) * 10000;
+
+    if (toughnessBreak == 'imaginary'){
+
+        var actionDelayPercent = 30%(1 + breakEffect);
+
+        AdvanceForwardActionDelay(actionGauge, 0, actionDelayPercent);
+
+    }
+
+    else if (toughnessBreak == 'quantum'){
+
+        var actionDelayPercent = 20%(1 + breakEffect);
+
+        AdvanceForwardActionDelay(actionGauge, 0, actionDelayPercent);
+
+    }
+
+    else if (toughnessBreak == 'ice'){
+
+        //Lose a turn
+
+        AdvanceForwardActionDelay(actionGauge, 50, 0);
+    }
+}
+
+function ActionValue(currentSpeed, actionGauge){
+
+    speed(speed, speedBuff, speedBuffPercent, currentSpeed);
+    var CurrentAV = actionGauge / currentSpeed;
+
+
+    if (actionGauge == 0){
+
+        var consumedAV = 0 - CurrentAV;
+        CurrentAV= CurrentAV - consumedAV;
+    }
+
+    return CurrentAV;
+}
+
+function Speed(speed, speedBuff, speedBuffPercent, currentSpeed){
+    
+    if (currentSpeed == speed){
+        var loopSpeed = currentSpeed;
+        var currentSpeed = loopSpeed + (speedBuffPercent * speed);
+        currentSpeed = currentSpeed + speedBuff;
+
+        currentSpeed = loopSpeed / currentSpeed;
+
+    }
+
+    return currentSpeed;
+    
 }

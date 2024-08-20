@@ -1,4 +1,3 @@
-
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
 function basicControls(value){
@@ -6,7 +5,6 @@ function basicControls(value){
     var characterId = document.getElementById("currentCharacter");
 
     if (value == 'skill'){
-
         
     }
 
@@ -20,9 +18,9 @@ function basicControls(value){
 
 function BaseDMG(atkScale){
 
-    var ATK= (AttackCharacter + AttackWeapon) * (1 + AttackBonus) + FlatAttack;
-    var DEF= (DefenseCharacter + DefenseWeapon) * (1 + DefenseBonus) + FlatDefense;
-    var MaxHP= (HealthCharacter + HealthWeapon) * (1 + HealthBonus) + FlatHealth;
+    var ATK = (AttackCharacter + AttackWeapon) * (1 + AttackBonus) + FlatAttack;
+    var DEF = (DefenseCharacter + DefenseWeapon) * (1 + DefenseBonus) + FlatDefense;
+    var MaxHP = (HealthCharacter + HealthWeapon) * (1 + HealthBonus) + FlatHealth;
 
 
     if (atkScale == 'atk'){
@@ -53,7 +51,7 @@ function Crit(CRITRate, CRITDamage){
     }
     else{
         var criT = clamp(CRITRate, 0, 100);
-        var AverageCrit= 1 + criT * CRITDamage;
+        var AverageCrit = 1 + criT * CRITDamage;
         var CRIT = AverageCrit;
     }
 
@@ -63,7 +61,7 @@ function Crit(CRITRate, CRITDamage){
 //DMG% Multiplier
 function DMGPercentMultiplier(ElementalDmgPercentage, AllTypeDmgPercent, DoTDmgPercent){
 
-    var dmgPercentMultiplier= 1 + ElementalDmgPercentage + AllTypeDmgPercent + DoTDmgPercent;
+    var dmgPercentMultiplier = 1 + ElementalDmgPercentage + AllTypeDmgPercent + DoTDmgPercent;
 
     return dmgPercentMultiplier;
 }
@@ -72,7 +70,7 @@ function DMGPercentMultiplier(ElementalDmgPercentage, AllTypeDmgPercent, DoTDmgP
 
 function DEFMultiplier(levelCharacter, levelEnemy){
 
-    var defMultiplier= levelCharacter +20/(levelEnemy +20)+(levelCharacter +20);
+    var defMultiplier = levelCharacter +20/(levelEnemy +20)+(levelCharacter +20);
 
     return defMultiplier;
 }
@@ -82,7 +80,7 @@ function DEFMultiplier(levelCharacter, levelEnemy){
 
 function RESMultiplier(resPercentage, resPenPercentage){
 
-    var resMultiplier= 100% - (resPercentage - resPenPercentage);
+    var resMultiplier = 100% - (resPercentage - resPenPercentage);
 
     return resMultiplier;
 }
@@ -91,7 +89,7 @@ function RESMultiplier(resPercentage, resPenPercentage){
 
 function VulnerabilityMultiplier(ElementalVulnerabilityPercentage, AllTypeVulnerabilityPercentage){
 
-    var vulnerabilityMultiplier= 1 + ElementalVulnerabilityPercentage + AllTypeVulnerabilityPercentage; 
+    var vulnerabilityMultiplier = 1 + ElementalVulnerabilityPercentage + AllTypeVulnerabilityPercentage; 
 
     return vulnerabilityMultiplier;
 }
@@ -115,9 +113,18 @@ function BrokenMultiplier(){
 
 //General DMG Formula
 
-function GeneralDMG(atkScale, CRITRate, CritDamage, ElementDmgPercent, AllTypeDmgPercent, DoTDmgPercent, levelCharacter, levelEnemy, resPercent, resPenPercent, ElementVulnPercent, AllTypeVulnPercent){
+function GeneralDMG(atkScale, CRITRate, CritDamage, ElementDmgPercent,
+    AllTypeDmgPercent, DoTDmgPercent,
+    levelCharacter, levelEnemy, resPercent,
+    resPenPercent, ElementVulnPercent, AllTypeVulnPercent){
 
-    var Damage= new BaseDMG(atkScale) * new Crit(CRITRate, CritDamage) * DMGPercentMultiplier(ElementDmgPercent, AllTypeDmgPercent, DoTDmgPercent) * new DEFMultiplier(levelCharacter, levelEnemy) * new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent,  AllTypeVulnPercent) * new BrokenMultiplier();
+    var part1 = new BaseDMG(atkScale) * new Crit(CRITRate, CritDamage);
+
+    var part2 = new DMGPercentMultiplier(ElementDmgPercent, AllTypeDmgPercent, DoTDmgPercent) * new DEFMultiplier(levelCharacter, levelEnemy);
+
+    var part3 = new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent,  AllTypeVulnPercent) * new BrokenMultiplier();
+
+    var Damage = part1  * part2 * part3;
 
     return Damage;
 }
@@ -127,7 +134,11 @@ function GeneralDMG(atkScale, CRITRate, CritDamage, ElementDmgPercent, AllTypeDm
 
 function BreakDMG(atkScale, breakEffect, levelCharacter, levelEnemy, resPercent, resPenPercent, ElementVulnPercent, AllTypeVulnPercent) {
 
-    var breakDamage= new BaseDMG(atkScale) * (1 + breakEffect) * new DEFMultiplier(levelCharacter, levelEnemy) * new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent, AllTypeVulnPercent) * new BrokenMultiplier();
+    var part1 = new BaseDMG(atkScale) * (1 + breakEffect) * new DEFMultiplier(levelCharacter, levelEnemy);
+    
+    var part2 = new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent, AllTypeVulnPercent) * new BrokenMultiplier();
+
+    var breakDamage = part1 * part2;
 
     return breakDamage;
 }
@@ -136,7 +147,13 @@ function BreakDMG(atkScale, breakEffect, levelCharacter, levelEnemy, resPercent,
 
 function SuperBreakDMG(LevelMultiplier, toughnessReduction, breakEffect, superBreakDmgIncrease, levelCharacter, levelEnemy, resPercent, resPenPercent, ElementVulnPercent, AllTypeVulnPercent) {
 
-    var superBreakDamage= LevelMultiplier * (toughnessReduction/10) * (1 + breakEffect) * (1 + superBreakDmgIncrease) * new DEFMultiplier(levelCharacter, levelEnemy) * new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent, AllTypeVulnPercent);
+    var part1 = LevelMultiplier * (toughnessReduction/10) * (1 + breakEffect);
+
+    var part2 = (1 + superBreakDmgIncrease) * new DEFMultiplier(levelCharacter, levelEnemy);
+
+    var part3 = new RESMultiplier(resPercent, resPenPercent) * new VulnerabilityMultiplier(ElementVulnPercent, AllTypeVulnPercent);
+
+    var superBreakDamage = part1 * part2 * part3;
 
     return superBreakDamage;
 }

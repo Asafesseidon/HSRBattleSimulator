@@ -58,6 +58,34 @@ body{
   margin: 5vh;
 }
 
+
+.enemyToughnessBar{
+ 
+  margin-top: 1%;
+  width: 100%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  height: 10px;
+  background-color: gray;
+  content: "";
+  display: inline-block;
+  padding: 1%;
+}
+
+.enemyHpBar{
+ 
+  margin-top: 1%;
+  width: 100%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  height: 10px;
+  background-color: gray;
+  content: "";
+  display: inline-block;
+  padding: 1%;
+}
+
+
 #allyParty{
 
   display: flex;
@@ -80,8 +108,22 @@ body{
 }
 .allyCharacter img {
 
-  width: 32vh;
-  height: 16vh;
+  max-width: 32vh;
+  max-height: 16vh;
+  margin: 0px 3vh;
+}
+
+.allyHpBar{
+ 
+  margin-top: 1%;
+  width: 90%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  height: 10px;
+  background-color: gray;
+  content: "";
+  display: inline-block;
+  padding: 1%;
 }
 
 #basicBattleControls{
@@ -89,6 +131,8 @@ body{
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  font-size: 2vh;
+  
 }
 #skill{
 
@@ -98,14 +142,14 @@ body{
   padding: 5vh;
   width: 14vh;
   height: 14vh;
-  border: 1vh solid var(--secondary-transparent-color);
+  border: 0.5vh solid var(--secondary-transparent-color);
   border-radius: 100%;
 
   align-items: center;
   justify-content: center;
 
   transition: transform 0.5s;
-
+  text-align: center;
 }
 
 #skill:hover{
@@ -121,13 +165,14 @@ body{
   padding: 5vh;
   width: 14vh;
   height: 14vh;
-  border: 1vh solid var(--secondary-transparent-color);
+  border: 0.5vh solid var(--secondary-transparent-color);
   border-radius: 100%;
 
   align-items: center;
   justify-content: center;
 
   transition: transform 0.5s;
+  text-align: center;
 }
 
 #basicAttack:hover{

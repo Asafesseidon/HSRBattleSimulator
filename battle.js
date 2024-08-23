@@ -46,17 +46,17 @@ function BaseDMG(atkScale){
 //CRIT Formula
 function Crit(CRITRate, CRITDamage){
 
+    var criTRNG = Math.floor(Math.random() * 100) + 1;
 
-    if (hitIsCrit){
+    if (criTRNG <= CRITRate) {
 
         var CRIT = 1 + CRITDamage;
     }
-    else{
-        var criT = clamp(CRITRate, 0, 100);
-        var AverageCrit = 1 + criT * CRITDamage;
-        var CRIT = AverageCrit;
-    }
+    else {
 
+        var CRIT = 1;
+    }
+    
     return CRIT;
 }
     
@@ -164,11 +164,12 @@ function turnOrder(actionGauge, CurrentAV){
 
     var turnOrderValue = 10000;
 
+
     if (actionGauge == 0 || CurrentAV == 0){
 
         var currentCharacterTurn = 'now';
     }
-
+    
 }
 
 function AdvanceForwardActionDelay(actionGauge, advanceForwardPercent, advanceForwardPercent, actionDelayPercent){
@@ -178,7 +179,7 @@ function AdvanceForwardActionDelay(actionGauge, advanceForwardPercent, advanceFo
     return actionGauge;
 }
 
-function ToughnessBreakDelay(actionGauge){
+function ToughnessBreakDelay(actionGauge, toughnessBreak){
 
     actionGauge = actionGauge - ( 0 - 25%actionGauge) * 10000;
 
@@ -206,11 +207,16 @@ function ToughnessBreakDelay(actionGauge){
     }
 }
 
-function ActionValue(currentSpeed, actionGauge){
+function ActionValue(speed, speedBuff, speedBuffPercent,currentSpeed, actionGauge){
 
-    speed(speed, speedBuff, speedBuffPercent, currentSpeed);
+    Speed(speed, speedBuff, speedBuffPercent, currentSpeed);
     var CurrentAV = actionGauge / currentSpeed;
 
+    if (enemyGetsBroken){
+
+        var toughnessBreak = getElementById('toughnessBreakType');
+        ToughnessBreakDelay(actionGauge, toughnessBreak);
+    }
 
     if (actionGauge == 0){
 
@@ -219,6 +225,8 @@ function ActionValue(currentSpeed, actionGauge){
     }
 
     return CurrentAV;
+
+
 }
 
 function Speed(speed, speedBuff, speedBuffPercent, currentSpeed){
@@ -229,7 +237,6 @@ function Speed(speed, speedBuff, speedBuffPercent, currentSpeed){
         currentSpeed = currentSpeed + speedBuff;
 
         currentSpeed = loopSpeed / currentSpeed;
-
     }
 
     return currentSpeed;

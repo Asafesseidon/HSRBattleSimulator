@@ -1,8 +1,8 @@
 *{
   --primary-transparent-color: rgba(133, 133, 133, 0.40);
   --secondary-transparent-color: rgba(196, 195, 195, 0.40);
+  --hp-color: rgba(211, 0, 0, 0.479);
 }
-
 body{
 
   background-color: rgb(19, 0, 44);
@@ -119,12 +119,17 @@ body{
   width: 90%;
   margin-right: 2.5%;
   margin-left: 2.5%;
-  height: 10px;
-  background-color: gray;
-  content: "";
+  height: 1.3vh;
+  background-color: var(--primary-transparent-color);
   display: inline-block;
-  padding: 1%;
+  border: 0.3vh solid var(--secondary-transparent-color);
 }
+.hpAlly{
+  width: 100%;
+  height: 100%;
+  background-color: var(--hp-color);
+}
+
 
 #basicBattleControls{
 

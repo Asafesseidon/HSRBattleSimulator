@@ -2,7 +2,10 @@
   --primary-transparent-color: rgba(133, 133, 133, 0.40);
   --secondary-transparent-color: rgba(196, 195, 195, 0.40);
   --hp-color: rgba(211, 0, 0, 0.479);
+  --toughness-color: rgba(23, 23, 165, 0.479);
 }
+
+html, body {margin: 0; height: 100%; overflow-y: hidden}
 body{
 
   background-color: rgb(19, 0, 44);
@@ -24,7 +27,7 @@ body{
 .turnOrderBoxes{
 
   position: static;
-  width: 22vh;
+  width: 15vh;
   height:10vh;
   padding:1vh;
   margin: 0.5vh;
@@ -61,30 +64,33 @@ body{
 
 .enemyToughnessBar{
  
-  margin-top: 1%;
+  margin: 1%, 2.5%, 0vh;
   width: 100%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  height: 10px;
+  height: 0.8vh;
   background-color: gray;
-  content: "";
   display: inline-block;
   padding: 1%;
+}
+.toughnessEnemy{
+  width: 100%;
+  height: 100%;
+  background-color: var(--toughness-color);
 }
 
 .enemyHpBar{
  
-  margin-top: 1%;
+  margin: 1%, 2.5%;
   width: 100%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  height: 10px;
+  height: 1.3vh;
   background-color: gray;
-  content: "";
   display: inline-block;
   padding: 1%;
 }
-
+.hpEnemy{
+  width: 100%;
+  height: 100%;
+  background-color: var(--hp-color);
+}
 
 #allyParty{
 
@@ -108,8 +114,8 @@ body{
 }
 .allyCharacter img {
 
-  max-width: 32vh;
-  max-height: 16vh;
+  max-width: 24vh;
+  max-height: 18vh;
   margin: 0px 3vh;
 }
 
@@ -130,11 +136,19 @@ body{
   background-color: var(--hp-color);
 }
 
+#sP{
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 4vh;
+  
+}
 
 #basicBattleControls{
 
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: flex-end;
   font-size: 2vh;
   
@@ -144,6 +158,7 @@ body{
   background-color: var(--primary-transparent-color);
 
   margin: 2vh;
+  margin-bottom: 10vh;
   padding: 5vh;
   width: 14vh;
   height: 14vh;
@@ -167,6 +182,7 @@ body{
   background-color: var(--primary-transparent-color);
 
   margin: 2vh;
+  margin-bottom: 0vh;
   padding: 5vh;
   width: 14vh;
   height: 14vh;
@@ -184,4 +200,3 @@ body{
 
   transform:scale(1.3);
 }
-

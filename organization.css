@@ -1,0 +1,30 @@
+*{
+  --primary-transparent-color: rgba(133, 133, 133, 0.40);
+  --secondary-transparent-color: rgba(196, 195, 195, 0.40);
+  --hp-color: rgba(211, 0, 0, 0.479);
+  --toughness-color: rgba(0, 0, 211, 0.479);
+}
+body{
+
+  background-color: rgb(19, 0, 44);
+  color: #ffffff;
+}
+
+
+#content{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+
+  width: max-content;
+  height: max-content;
+  align-content: space-around;
+}
+
+.characters img{
+
+  max-width: 64vh;
+  max-height: 64vh;
+  margin: 0px 3vh;
+}

@@ -14,7 +14,7 @@ body{
 #content{
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;  
 
   width: max-content;
@@ -22,9 +22,30 @@ body{
   align-content: space-around;
 }
 
+#characterList{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+
+  justify-content: center;
+  align-items: center;
+
+}
+
 .characters img{
 
-  max-width: 64vh;
-  max-height: 64vh;
+  max-width: 32vh;
+  max-height: 32vh;
   margin: 0px 3vh;
+}
+
+#link1{
+  display: flex;
+
+  background-color: rgb(39, 65, 88);
+
+  height: 6vh;
+  width: 20vh;
+  border-radius: 5%;
 }

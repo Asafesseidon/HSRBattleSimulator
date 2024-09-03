@@ -39,12 +39,12 @@ body{
 #column{
 
   position: static;
-  height: 100%max-content;
+  height: 100%;
   justify-content: space-around;
 }
 
 .span{
-  height: 40vh;
+  height: 30vh;
 }
 
 #enemyBox{
@@ -53,12 +53,13 @@ body{
   flex-direction: row;
   align-items: flex-start;
 
-  height: min-content;
+  height: fit-content;
 }
 
 .enemy{
 
-  margin: 5vh;
+  margin: 5vh 2vh;
+  font-size: 2vh;
 }
 
 
@@ -75,11 +76,12 @@ body{
   width: 100%;
   height: 100%;
   background-color: var(--toughness-color);
+  margin-bottom: 0%;
 }
 
 .enemyHpBar{
  
-  margin: 1%, 2.5%;
+  margin: 0, 2.5%;
   width: 100%;
   height: 1.3vh;
   background-color: gray;
@@ -111,6 +113,7 @@ body{
   height: 5vh;
   border: 0.5vh solid var(--secondary-transparent-color);
   border-radius: 100%;
+  font-size: 2.5vh;
 }
 .allyCharacter img {
 
@@ -118,6 +121,14 @@ body{
   max-height: 18vh;
   margin: 0px 3vh;
 }
+.enemy img {
+
+  max-width: 16vh;
+  max-height: 16vh;
+  margin: 0px;
+}
+
+
 
 .allyHpBar{
  

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="athur" content="Asafe Domingues Marcelino">
   
   <link rel="stylesheet" href="./battle.css">
   <script src="./battle.js"></script>
@@ -38,52 +37,52 @@
        <div id="enemyBox">
       <div class="enemy" id="enemy1">
           <div class="enemyToughnessBar">
-            <div class="toughnessEnemy" id="toughnessEnemy1">Toughness</div>
+            <div class="toughnessEnemy" id="toughnessEnemy1"></div>
             </div>
           <br>
           <div class="enemyHpBar"><div class="hpEnemy" id="hpEnemy1">HP</div></div>
-          Enemy 1
+          <img src="./Assets/Enemy_Ice_Out_of_Space.webp">
 
         </div>
 
         <div class="enemy" id="enemy2">       
           <div class="enemyToughnessBar">
-            <div class="toughnessEnemy" id="toughnessEnemy1">Toughness</div>
+            <div class="toughnessEnemy" id="toughnessEnemy1"></div>
           </div>
           <br>
           <div class="enemyHpBar"><div class="hpEnemy" id="hpEnemy2">HP</div></div>
-          Enemy 2
+          <img src="./Assets/Enemy_Frigid_Prowler.webp">
 
         </div>
 
         <div class="enemy" id="enemy3">
+          <div class="weaknesses"><img src="" alt=""> <img src="" alt=""> <img src="" alt=""></div>
           <div class="enemyToughnessBar">
-            <div class="toughnessEnemy" id="toughnessEnemy2">Toughness</div>
+            <div class="toughnessEnemy" id="toughnessEnemy2"></div>
           </div>
           <br>
           <div class="enemyHpBar"><div class="hpEnemy" id="hpEnemy3">HP</div></div>
-          Enemy 3
-       
+          <img src="./Assets/Enemy_Howling_Casket.webp">
         </div>
 
         <div class="enemy" id="enemy4">
           
           <div class="enemyToughnessBar">
-            <div class="toughnessEnemy" id="toughnessEnemy4">Toughness</div>
+            <div class="toughnessEnemy" id="toughnessEnemy4"></div>
           </div>
           <br>
           <div class="enemyHpBar"><div class="hpEnemy" id="hpEnemy4">HP</div></div>
-          Enemy 4
+          <img src="./Assets/BeyondOvercooked.webp" alt="">
 
         </div>
 
         <div class="enemy" id="enemy5">
           <div class="enemyToughnessBar">
-            <div class="toughnessEnemy" id="toughnessEnemy5">Toughness</div>
+            <div class="toughnessEnemy" id="toughnessEnemy5"></div>
           </div>
           <br>
           <div class="enemyHpBar"><div class="hpEnemy" id="hpEnemy5">HP</div></div>
-          Enemy 5
+          <img src="./Assets/Enemy_Searing_Prowler.webp">
 
         </div>
       </div>
@@ -130,8 +129,8 @@
         12345
       </div>
     <div id="basicBattleControls">
-      <div id="skill" onclick="basicControls('skill')">Skill</div>
-      <div id="basicAttack" onclick="basicControls('basicAttack')">Basic Attack</div>
+      <div id="skill" onclick="basicControls('skill', 'ally1')">Skill</div>
+      <div id="basicAttack" onclick="basicControls('basicAttack', 'ally1')">Basic Attack</div>
       <br>
     
     </div>

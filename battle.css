@@ -121,13 +121,17 @@ body{
   max-height: 18vh;
   margin: 0px 3vh;
 }
-.enemy img {
+.enemyImg {
 
   max-width: 16vh;
   max-height: 16vh;
   margin: 0px;
 }
-
+.weaknesses img{
+  max-width: 3vh;
+  max-height: 3vh;
+  margin: 0px;
+}
 
 
 .allyHpBar{
@@ -152,8 +156,11 @@ body{
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  font-size: 4vh;
-  
+  font-size: 4vh;  
+}
+#sP img{
+  max-width: 6vh;
+  max-height: 6vh;
 }
 
 #basicBattleControls{

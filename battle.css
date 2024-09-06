@@ -2,7 +2,15 @@
   --primary-transparent-color: rgba(133, 133, 133, 0.40);
   --secondary-transparent-color: rgba(196, 195, 195, 0.40);
   --hp-color: rgba(211, 0, 0, 0.479);
-  --toughness-color: rgba(23, 23, 165, 0.479);
+  --hp-color-ally:rgba(0, 225, 255, 0.726);
+  --toughness-color: rgba(180, 180, 219, 0.479);
+  --fire-ult-color:rgba(214, 55, 27, 0.479);
+  --ice-ult-color:rgba(0, 139, 253, 0.479);
+  --wind-ult-color:rgba(8, 223, 98, 0.479);
+  --lightning-ult-color:rgba(136, 11, 194, 0.479);
+  --imaginary-ult-color:rgba(212, 192, 9, 0.479);
+  --quantum-ult-color:rgba(45, 0, 245, 0.479);
+
 }
 
 html, body {margin: 0; height: 100%; overflow-y: hidden}
@@ -28,12 +36,12 @@ body{
 
   position: static;
   width: 15vh;
-  height:6vh;
+  height:4.5vh;
   padding:1vh;
   margin: 0.5vh;
 
   background-color: var(--primary-transparent-color);
-  border-radius: 10%;
+  border-radius: 5%;
 
 }
 #column{
@@ -105,16 +113,35 @@ body{
   height: min-content;
 }
 
-.ultimate{
+.ultimateBar{
 
   background-color: var(--primary-transparent-color);
 
-  padding: 1vh;
+  padding: 0vh;
   width: 5vh;
   height: 5vh;
   border: 0.5vh solid var(--secondary-transparent-color);
   border-radius: 100%;
   font-size: 2.5vh;
+}
+.ultimate{
+  background-color: var(--toughness-color);
+  width: 100%;
+  height:100%;
+  border-radius: 100%;
+  font-size: 2.5vh;
+}
+#ultAlly1{
+  background-color: var(--wind-ult-color);
+}
+#ultAlly2{
+  background-color: var(--ice-ult-color);
+}
+#ultAlly3{
+  background-color: var(--lightning-ult-color);
+}
+#ultAlly4{
+  background-color: var(--wind-ult-color);
 }
 .allyCharacter img {
 
@@ -149,7 +176,7 @@ body{
 .hpAlly{
   width: 100%;
   height: 100%;
-  background-color: var(--hp-color);
+  background-color: var(--hp-color-ally);
 }
 
 #sP{

@@ -28,7 +28,7 @@ body{
 
   position: static;
   width: 15vh;
-  height:10vh;
+  height:6vh;
   padding:1vh;
   margin: 0.5vh;
 
@@ -41,10 +41,11 @@ body{
   position: static;
   height: 100%;
   justify-content: space-around;
+  margin: 0%;
 }
 
 .span{
-  height: 30vh;
+  height: 25vh;
 }
 
 #enemyBox{
@@ -128,8 +129,8 @@ body{
   margin: 0px;
 }
 .weaknesses img{
-  max-width: 3vh;
-  max-height: 3vh;
+  max-width: 2vh;
+  max-height: 2vh;
   margin: 0px;
 }
 
@@ -157,10 +158,11 @@ body{
   flex-direction: row;
   align-items: flex-end;
   font-size: 4vh;  
+  margin-bottom: 2vh;
 }
 #sP img{
-  max-width: 6vh;
-  max-height: 6vh;
+  max-width: 4vh;
+  max-height: 4vh;
 }
 
 #basicBattleControls{

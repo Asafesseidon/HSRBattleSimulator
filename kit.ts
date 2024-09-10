@@ -108,6 +108,28 @@ class FuA{
     private condition: string;
     private multiplier: number;
     private reach:string;
+    constructor(name:string, type:string, condition:string, reach:string, multiplier:number){
+        this.name = name;
+        this.type = type;
+        this.condition = condition;
+        this.reach = reach;
+        this.multiplier = multiplier;
+    }
+    public getFuAName():string{
+        return this.name;
+    }
+    public getFuAType():string{
+        return this.type;
+    }
+    public getFuAMultiplier():number{
+        return this.multiplier;
+    }
+    public getFuAReach():string{
+        return this.reach;
+    }
+    public getFuACondition():string{
+        return this.condition;
+    }
 }
 
 class Ultimate{

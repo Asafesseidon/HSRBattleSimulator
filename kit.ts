@@ -272,97 +272,90 @@ class Enemy extends Personagem{
         this.toughness=toughness;
     }
 }
-function chars(id, iteration){
+function chars(id:number, iteration:number):Personagem[] | number{
 
     if (iteration >= 4){
 
         iteration = 4;
     } 
 
+    var ally: Personagem[] =[];
     if (id == 0) {
 
-        var ally = [];
         iteration++;
 
-        alert(ally);
 
         return ally;
     }
 
     else if (id == 1) {
 
-        var ally = [new Personagem(2600,new LightCone('a','ab', 800,500,450, 'a', 'ab'),
+        ally = [new Personagem(2600,new LightCone('a','ab', 800,500,450, 'a', 'ab'),
         new BasicAttack('a', 50, 1, 'Single Target'),
         new Skill('a', 'buff', 200, 2, 'Blast', 'Heals allies and Cleanses main Target', 60), 1000,800,100,'hpAlly' + iteration,
         new Ultimate('e',110, 'buff', 500, 0, 'AoE', 'Increases energy and ATK', 10), new Talent('a', 'buff', 'Heal','Single Target', 10))]; //Huohuo
         iteration++;
 
-        alert(ally);
 
         return ally;
     }
 
     else if (id == 2) {
 
-        var ally = [new Personagem(2600,new LightCone('b','bc',800,500,450, 'b', 'bc'),
+        ally = [new Personagem(2600,new LightCone('b','bc',800,500,450, 'b', 'bc'),
         new BasicAttack('a', 50, 1, 'Single Target'), 
         new Skill('a', 'attack', 200, 2, 'Blast', "Trigger all DoT's currently on the main target", 75),1000,800,100,'hpAlly' + iteration, 
         new Ultimate('q', 120, 'attack', 470, 0, 'AoE', "Apply Shock to all targets and Trigger all DoT's currently on them", 75), new Talent('a', 'attack', 'FuA+Debuff','Single Target', 10))]; //Kafka
         iteration++;
 
-        alert(ally);
 
         return ally;
     }
 
     else if (id == 3) {
 
-        var ally= [new Personagem(2600,new LightCone('c','cd',800,500,450, 'c', 'cd'),
+        ally= [new Personagem(2600,new LightCone('c','cd',800,500,450, 'c', 'cd'),
         new BasicAttack('attack', 50, 1, 'Single Target'), 
         new Skill('a', 'attack', 200, 2, 'Blast', 'Apply 2 stacks of Arcana to the main target and shreds their Def, 1 for the adjacent ones', 10 ), 1000,800,100,'hpAlly' + iteration,  
         new Ultimate('q', 120, 'attack', 470, 0, 'AoE', 'Applies Epiphany and Treats Arcana as Bleed, Burn, Wind Shear and Shock', 10), new Talent('a', 'buff', 'a','Single Target', 10))]; //Black Swan
         iteration++;
 
-        alert(ally);
 
         return ally;
     }
 
     else if (id == 4) {
 
-        var ally= [new Personagem(2600,new LightCone('d','de',800,500,450, 'd', 'de'),
+        ally= [new Personagem(2600,new LightCone('d','de',800,500,450, 'd', 'de'),
         new BasicAttack('a', 50, 1, 'Single Target'), 
         new Skill('a', 'buff', 200, 2, 'AoE', 'Applies Ruan Mei Buff, +50% Weakness Break Efficiency', 35), 1000,800,100,'hpAlly' + iteration,  
         new Ultimate('q', 120, 'buff', 470, 0, 'AoE', 'Applies RESPEN', 25), new Talent('a', 'buff', 'Speed Buff+ Extra Break Dmg','AoE', 10))]; //Ruan Mei
         iteration++;
 
-        alert(ally);
 
         return ally;
     }
 
     else if (id == 5) {
 
-        var ally= [ new Personagem(2600,new LightCone('e','ef',800,500,450, 'e', 'ef'),
+        ally= [ new Personagem(2600,new LightCone('e','ef',800,500,450, 'e', 'ef'),
         new BasicAttack('a', 50, 1, 'Single Target'), 
         new Skill('a', 'buff', 200, 2, 'AoE', 'Apllies Shield to all Allies and Blind Bet', 60), 1000,800,100,'hpAlly' + iteration,  
         new Ultimate('q', 120, 'attack', 470, 0, 'Single Target', 'Applies Crit DMG Vulnerabity to Target and gain stacks for FuA', 10), new Talent('a', 'buff', 'a','Single Target', 10))]; //Aventurine
         iteration++;
 
-        alert(ally);
 
         return ally;        
     }
 
     else if (id == 6) {
 
-        var ally = [new Personagem(2600,new LightCone('f','fg',800,500,450, 'f', ' fg'),
+        ally = [new Personagem(2600,new LightCone('f','fg',800,500,450, 'f', ' fg'),
         new BasicAttack('a', 50, 1, 'Single Target'), 
         new Skill('a', 'attack', 200, 2, 'Single Target', 'Chance to Trigger FuA', 60), 1000,800,100,'hpAlly' + iteration,  
         new Ultimate('q', 120, 'attack', 470, 0, 'Single Target', 'Buffs Crit Rate and enters Soulsteel state', 50), new Talent('a', 'buff', 'a','Single Target', 10))]; //Yanqing
         iteration++;
 
-        alert(ally);
 
         return ally;
     }

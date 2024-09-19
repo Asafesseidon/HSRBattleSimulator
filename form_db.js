@@ -1,3 +1,4 @@
+const sqlite3 = require('sqlite3').verbose();
 var http = require('http');
 var fs = require('fs');
 var url = require('url');

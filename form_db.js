@@ -8,7 +8,7 @@ http.createServer(function (req, res) {
     console.log("Nome do arquivo: " + nomearquivo);
 
     if(nomearquivo == "./"){
-      fs.readFile("organization.html", function(err, data) {
+      fs.readFile("./organization.html", function(err, data) {
         if(err){
             res.writeHead(404, {'Content-Type': 'text/html'});
             return res.end("404 Arquivo não encontrado!");
